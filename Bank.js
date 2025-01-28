@@ -28,7 +28,7 @@ class Account {
     // example data to be stored in transactionHistory { transactionType: 'Deposit', amount: 500 }
     deposit(amount){
         this.balance += amount
-        this.transactionHistory.push ({ transactionType: 'deposit', amount: amount})
+        this.transactionHistory.push ({ transactionType: 'Deposit', amount: amount})
     }
     
     // Example: withdraw(amount)
@@ -36,7 +36,7 @@ class Account {
     withdraw(amount){
         if (this.balance >= amount) {
             this.balance -= amount
-            this.transactionHistory.push ({ transactionType: 'withdrawal', amount: amount})
+            this.transactionHistory.push ({ transactionType: 'Withdrawal', amount: amount})
         }
         else{
             return 'insuficiant funds'
