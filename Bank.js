@@ -49,11 +49,15 @@ class Account {
     // for account recieving { transactionType: 'Received', amount: 300, from: senderName }
     transfer(amount, recipientAccount){
         if (this.balance >= amount) {
+            this.balance -= amount
             recipientAccount.balance += amount
+            
             this.transactionHistory.push ({ transactionType: 'Transfer', amount: amount, to: recipientAccount.name })
             recipientAccount.transactionHistory.push({ transactionType: 'Received', amount: amount, from: this.name })
-
         }   
+        else{
+            return "insufficient funds"
+        }
     }
 
     // Example: checkBalance()
